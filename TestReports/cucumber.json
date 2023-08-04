@@ -1,0 +1,362 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 1494500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CordeQuickLinks.beforeHooks(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 76300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LccNews.beforeHooks(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 49600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "OldTrafford.beforeHooks(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 47000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "YHG.beforeHooks(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 49800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CordeAccordion.beforeHooks(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 45600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CordeRichTextEditor.beforeHooks(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 46200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "BramfordNews.beforeHooks(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 46800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ProdoTest.beforeHooks(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 47700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Lancashirecricket.beforeHooks(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 43700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "YHGHome.beforeHooks(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 59000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CordeTextSnippet.beforeHooks(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 63700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "BramFordCustomerArea.beforeHooks(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 73800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Bromford.beforeHooks(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 95800,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CordeStatistics.beforeHooks(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 53200,
+              "status": "passed"
+            },
+            "match": {
+              "location": "OldTraffordEnquire.beforeHooks(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 46500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CordeQuote.beforeHooks(Scenario)"
+            }
+          }
+        ],
+        "line": 41,
+        "name": "Test Statistics Module",
+        "description": "",
+        "id": "test-corde-page;test-statistics-module",
+        "after": [
+          {
+            "result": {
+              "duration": 48000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CordeQuickLinks.afterHooks(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 16100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "LccNews.afterHooks(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 16500,
+              "status": "passed"
+            },
+            "match": {
+              "location": "OldTrafford.afterHooks(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 22100,
+              "status": "passed"
+            },
+            "match": {
+              "location": "YHG.afterHooks(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 17400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CordeAccordion.afterHooks(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 16600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CordeRichTextEditor.afterHooks(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 16400,
+              "status": "passed"
+            },
+            "match": {
+              "location": "BramfordNews.afterHooks(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 16300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "ProdoTest.afterHooks(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 17700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Lancashirecricket.afterHooks(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 126300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "YHGHome.afterHooks(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 26700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CordeTextSnippet.afterHooks(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 25600,
+              "status": "passed"
+            },
+            "match": {
+              "location": "BramFordCustomerArea.afterHooks(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 142300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Bromford.afterHooks(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 26300,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CordeStatistics.afterHooks(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 34900,
+              "status": "passed"
+            },
+            "match": {
+              "location": "OldTraffordEnquire.afterHooks(Scenario)"
+            }
+          },
+          {
+            "result": {
+              "duration": 20700,
+              "status": "passed"
+            },
+            "match": {
+              "location": "CordeQuote.afterHooks(Scenario)"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "output": [
+              "URL lauch"
+            ],
+            "result": {
+              "duration": 2879027900,
+              "status": "passed"
+            },
+            "line": 43,
+            "name": "Launch the Application to test Statistics module",
+            "match": {
+              "location": "CordeStatistics.launch_the_Application_to_test_Statistics_module()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "output": [
+              "Link clicked"
+            ],
+            "result": {
+              "duration": 5029070200,
+              "status": "passed"
+            },
+            "line": 44,
+            "name": "Click on Menu Nav to go to the Statistics page",
+            "match": {
+              "location": "CordeStatistics.click_on_Menu_Nav_to_go_to_the_Statistics_page()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 221637600,
+              "status": "passed"
+            },
+            "line": 45,
+            "name": "Check  Statistics number heading and link",
+            "match": {
+              "location": "CordeStatistics.check_Statistics_number_heading_and_link()"
+            },
+            "keyword": "Then "
+          }
+        ],
+        "tags": [
+          {
+            "line": 40,
+            "name": "@Stat"
+          }
+        ]
+      }
+    ],
+    "name": "Test Corde Page",
+    "description": "",
+    "id": "test-corde-page",
+    "keyword": "Feature",
+    "uri": "src/test/java/feature/Corde.feature"
+  }
+]
