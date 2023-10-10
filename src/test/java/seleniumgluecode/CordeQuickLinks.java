@@ -9,15 +9,10 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.List;
 import java.util.NoSuchElementException;
-
 import javax.imageio.ImageIO;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.Assert;
-
 import baseClass.BaseClass;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
@@ -40,16 +35,12 @@ public class CordeQuickLinks extends BaseClass {
 	
 	@After
 	public void afterHooks(Scenario scenario) throws IOException {
-		String status = scenario.getStatus();
+		String  status = scenario.getStatus();
 		if(scenario.isFailed()) {
 			getScreenshot(driver, scenario.getName());
 		}
 	}
 	
-	 	@Given("^Launch the corde$")
-	    public void launch_the_application_corde() throws Throwable {
-	 		driver.get(FileReaderManager.getInstance().getCRInstance().getData("CordeURL"));
-	    }
 
 	    @Then("^Click on Menu Nav to go to the Quick Links page$")
 	    public void click_on_menu_nav_to_go_to_the_quick_links_page() throws Throwable {

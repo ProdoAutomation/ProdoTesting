@@ -12,8 +12,6 @@ import org.openqa.selenium.support.PageFactory;
 public class CordeListingsPage {
 	
 	
-	
-	
 		//ALternate Listing 
 	
 		@FindBys(@FindBy(how=How.XPATH,using="//*[@class='m-listings m-listings--alternate']//li"))
@@ -53,7 +51,7 @@ public class CordeListingsPage {
 		private WebElement Listingimage;
 		
 		//Listing summary
-		@FindBy(how=How.XPATH,using="//*[@class='m-listings ']//preceding::div[@class='m-listings m-listings--alternate']//li/div/div/h3")
+		@FindBy(how=How.XPATH,using="//*[@class='m-listings ']//preceding::div[@class='m-listings m-listings--alternate']//li//div[@class='m-rte']")
 		private WebElement Listingsummary;		
 				
 		

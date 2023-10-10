@@ -23,7 +23,6 @@ public class CordeVideoPage {
 	@FindBy(how=How.XPATH,using="//*[@class='m-video__btn']")
 	private WebElement VideoBTN;
 	
-	
 
 	//Light house iframe video button
 	@FindBy(how=How.CSS,using="button.ytp-large-play-button.ytp-button.ytp-large-play-button-red-bg")
@@ -45,6 +44,18 @@ public class CordeVideoPage {
 	@FindBys(@FindBy(how=How.XPATH,using="//*[@class='m-video m-video--embed']//p"))
 	private List<WebElement> VideoP2;	
 	
+	//Close button
+	@FindBy(how=How.XPATH,using="//*[@type='button'][@class='m-modal__close js-close_modal']")
+	private WebElement Closebutton;	
+	
+	//Modal frame
+	
+	@FindBys(@FindBy(how=How.XPATH,using="//*[@class='m-video m-video--lightbox']//a[@class='m-video__btn']"))
+	private List<WebElement> Modalframe;	
+	
+	//Modal play button
+	@FindBy(how=How.XPATH,using="//*[@class='m-modal__embed']/iframe")
+	private WebElement Modalplaybutton;	
 
 	public CordeVideoPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
@@ -80,6 +91,18 @@ public class CordeVideoPage {
 
 	public List<WebElement> getVideoP2() {
 		return VideoP2;
+	}
+
+	public WebElement getClosebutton() {
+		return Closebutton;
+	}
+
+	public List<WebElement> getModalframe() {
+		return Modalframe;
+	}
+
+	public WebElement getModalplaybutton() {
+		return Modalplaybutton;
 	}
 
 	

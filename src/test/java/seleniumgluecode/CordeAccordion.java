@@ -1,17 +1,16 @@
 package seleniumgluecode;
 
-import java.awt.image.BufferedImage;
-import java.io.File;
 import java.io.IOException;
-import java.net.URL;
+
 import java.util.List;
 import java.util.NoSuchElementException;
 
-import javax.imageio.ImageIO;
+
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 
 import baseClass.BaseClass;
 import cucumber.api.Scenario;
@@ -34,16 +33,13 @@ public class CordeAccordion extends BaseClass {
 	
 	@After
 	public void afterHooks(Scenario scenario) throws IOException {
-		String status = scenario.getStatus();
+	String status = scenario.getStatus();
 		if(scenario.isFailed()) {
 			getScreenshot(driver, scenario.getName());
 		}
 	}
 	
-	@Given("^Launch the Application corde$")
-    public void launch_the_application_corde() throws Throwable {
-		driver.get(FileReaderManager.getInstance().getCRInstance().getData("CordeURL"));
-    }
+	
 
     @Then("^Click on Menu Nav to go to the accordion page$")
     public void click_on_menu_nav_to_go_to_the_accordion_page() throws Throwable {
@@ -96,6 +92,7 @@ public class CordeAccordion extends BaseClass {
     	}
     	//Logic to click Accordion grid and check images
     	List<WebElement> Secondtext = pag.getCordeAcc().getGridlinks();
+    	getScroll(driver);
     	for(WebElement Second:Secondtext) {
     		System.out.println(Second.getText());
     		String Acc = "Fail";
@@ -106,6 +103,8 @@ public class CordeAccordion extends BaseClass {
 	    			   if(View2.getAttribute("href").equalsIgnoreCase(FileReaderManager.getInstance().getCRInstance().getData("Acclink"))) {
 	    				    Acc = "Success";
 	    				   ClickElement(View2);
+	    				   String Title = driver.getTitle();
+	    				   Assert.assertEquals(Title, FileReaderManager.getInstance().getCRInstance().getData("AccHeading"));
 	    				   break;
 	    			   }
 	    				
@@ -126,26 +125,13 @@ public class CordeAccordion extends BaseClass {
 
     @Then("^Check the accordion list$")
     public  void check_the_accordion_list() throws Throwable {
-    	getScroll(driver);
+    	getScroll700(driver);
     	List<WebElement> Accordionlinks = pag.getCordeAcc().getAccordiondrop();
     	    	if(Accordionlinks.size() > 0) {
    		for(WebElement Acclink:Accordionlinks) {
 	    				   ClickElement(Acclink);
-    				   WebElement image1 = driver.findElement(By.xpath("//*[@class='m-accordion__image']"));    
-    				   String img = image1.getAttribute("src");
-    				   try {
-    					   if (img== null) {
-    						   throw new NoSuchElementException();
-    					   }
-    					   else {
-    						   BufferedImage imgs=ImageIO.read(new URL(img));
-    						   System.out.println("Image is displayed");
-    					   }
-    				   }
-    				   catch(IOException e){
-    					   e.printStackTrace();
-		    	
-		    			}
+    				   WebElement image1 = pag.getCordeAcc().getAccImage();  
+    				   ImageCheck(image1);
    					}
     	    	}
 		    			
@@ -155,9 +141,10 @@ public class CordeAccordion extends BaseClass {
 
 	@Then("^Check Tab lists$")
     public void check_tab_lists() throws Throwable {
-    	List<WebElement> Tabtitle = pag.getCordeAcc().getTabtitle();
-    	if(Tabtitle.size() > 0) {
-    	for(WebElement Tablink:Tabtitle) {
+		
+    	List<WebElement> Tablinks = pag.getCordeAcc().getTablinks();
+    	if(Tablinks.size() > 0) {
+    	for(WebElement Tablink:Tablinks) {
 	    				   ClickElement(Tablink);
     				}
     		}

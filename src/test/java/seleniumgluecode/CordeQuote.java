@@ -41,10 +41,7 @@ public class CordeQuote extends BaseClass{
 			getScreenshot(driver, scenario.getName());
 		}
 	}
-	@Given("^Launch the Application to test Quote module$")
-	public void launch_the_Application_to_test_Quote_module() throws Throwable {
-		driver.get(FileReaderManager.getInstance().getCRInstance().getData("CordeURL"));
-	}
+	
 
 	@Then("^Click on Menu Nav to go to the Quote page$")
 	public void click_on_Menu_Nav_to_go_to_the_Quote_page() throws Throwable {

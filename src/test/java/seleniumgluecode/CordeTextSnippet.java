@@ -8,6 +8,10 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
+
+import com.cucumber.listener.Reporter;
 
 import baseClass.BaseClass;
 import cucumber.api.Scenario;
@@ -26,6 +30,7 @@ public class CordeTextSnippet extends BaseClass {
 	
 	@Before
 	public void beforeHooks(Scenario scenario) {
+		Reporter.assignAuthor("QA by Raji");
 		String name = scenario.getName();
 		
 	}
@@ -35,12 +40,11 @@ public class CordeTextSnippet extends BaseClass {
 		String status = scenario.getStatus();
 		if(scenario.isFailed()) {
 			getScreenshot(driver, scenario.getName());
+			
 		}
 	}
-	@Given("^Launch the corde App$")
-    public void launch_the_corde_app() throws Throwable {
-		driver.get(FileReaderManager.getInstance().getCRInstance().getData("CordeURL"));
-    }
+	
+	
 
     @Then("^Click on Menu Nav to go to the Text Snippet page$")
     public void click_on_menu_nav_to_go_to_the_text_snippet_page() throws Throwable {
@@ -136,7 +140,6 @@ public class CordeTextSnippet extends BaseClass {
     			WebElement button = pag.getCordeText().getTextSnippetCTA();
     		//boolean ButtonVisible = button.isDisplayed();
     			ClickElement(pag.getCordeText().getTextSnippetCTA());
-    			
     		}
     	
     	

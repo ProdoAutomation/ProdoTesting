@@ -13,6 +13,7 @@ import com.cucumber.listener.Reporter;
 import baseClass.BaseClass;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import dataProviders.FileReaderManager;
@@ -25,6 +26,10 @@ import runner.TestRunner;
 public class CordeSocial extends BaseClass{
 		public static WebDriver driver = TestRunner.driver;
 		PageObjectManager pag = new PageObjectManager(driver);
+		@Before
+		public void beforeHooks(Scenario scenario) {
+			String name = scenario.getName();
+		}
 		
 		@After
 		public void afterhooks(Scenario scenario) throws IOException {
@@ -35,12 +40,6 @@ public class CordeSocial extends BaseClass{
 				}
 			}
 		
-		
-	@Given("^Launch the Application to test Social module$")
-	public void launch_the_Application_to_test_Social_module() throws Throwable {
-		driver.get(FileReaderManager.getInstance().getCRInstance().getData("CordeURL"));
-		
-	}
 
 	@Then("^Click on Menu Nav to go to the Social page$")
 	public void click_on_Menu_Nav_to_go_to_the_Social_page() throws Throwable {
@@ -141,7 +140,7 @@ public class CordeSocial extends BaseClass{
 			//Check we don't have other windows open already
 			assert driver.getWindowHandles().size() == 1;
 			
-			List<WebElement> lin = driver.findElements(By.xpath("//*[@class='m-social__cardlink e-link']"));
+			List<WebElement> lin = pag.getCordeSocial().getSocialLinks();
 			for(WebElement lins:lin ) {
 			ClickElement(lins);
 				for (String windowHandle : driver.getWindowHandles()) {

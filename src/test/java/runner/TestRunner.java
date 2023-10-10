@@ -2,7 +2,6 @@ package runner;
 
 import java.io.IOException;
 
-
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
@@ -13,32 +12,33 @@ import cucumber.api.CucumberOptions;
 import cucumber.api.junit.Cucumber;
 import dataProviders.FileReaderManager;
 
+
+
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		features = "src/test/java/feature/Corde.feature",
+		features = "src/test/java/feature/",
 		glue = {"seleniumgluecode"},
-		tags = {"@Social"},
+		//tags= {"@imgs"},
 		//plugin= {"json:TestReports/cucumber.json"},
 		plugin = {"com.cucumber.listener.ExtentCucumberFormatter:Reports/CucumberTestReport.html"},
-				monochrome = true
+		monochrome = true
 				
 		
 		)
-public class TestRunner {
+public class TestRunner  {
 	
 	public static WebDriver driver;
-	
 	@BeforeClass
 	public static void setUp() throws Exception{
 		String browserName = FileReaderManager.getInstance().getCRInstance().getData("BrowserName");
 		driver = BaseClass.getBrowser(browserName);
 		
 	}
-
-@AfterClass
+	
+	
+	@AfterClass
 	public static void teardown() {
 	driver.quit();
 	}
-	
 
 }

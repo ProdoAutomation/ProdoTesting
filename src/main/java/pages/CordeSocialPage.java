@@ -36,6 +36,8 @@ public class CordeSocialPage {
 			private List<WebElement> SocialLinks;
 			
 			
+		
+			
 			
 			
 		public CordeSocialPage(WebDriver driver) {

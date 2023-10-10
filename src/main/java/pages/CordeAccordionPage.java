@@ -42,7 +42,7 @@ public class CordeAccordionPage {
 	
 	
 	//Tab links
-	@FindBys(@FindBy(how=How.XPATH,using="//*[@class='m-tabs__inner']/ul/li"))
+	@FindBys(@FindBy(how=How.XPATH,using="//*[@class='m-tabs__tabs tabs']/li"))
 	
 	private List<WebElement> Tablinks;
 	
@@ -52,8 +52,10 @@ public class CordeAccordionPage {
 	
 	private List<WebElement> Tabtitle;
 
+	//Acc image 
 	
-	
+	@FindBy(how=How.XPATH,using="//*[@class='m-accordion__image']")
+	private WebElement AccImage;
 
 
 	public CordeAccordionPage(WebDriver driver) {
@@ -95,6 +97,14 @@ public class CordeAccordionPage {
 	public List<WebElement> getTabtitle() {
 		return Tabtitle;
 	}
+
+
+	public WebElement getAccImage() {
+		return AccImage;
+	}
+
+
+	
 	
 	
 	

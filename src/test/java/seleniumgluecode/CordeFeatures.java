@@ -36,10 +36,6 @@ public class CordeFeatures extends BaseClass {
 	}
 	
 	
-	@Given("^Launch the Application to test Features module$")
-	public void launch_the_Application_to_test_Features_module() throws Throwable {
-		driver.get(FileReaderManager.getInstance().getCRInstance().getData("CordeURL"));
-	}
 
 	@Then("^Click on Menu Nav to go to the Features page$")
 	public void click_on_Menu_Nav_to_go_to_the_Features_page() throws Throwable {
@@ -151,7 +147,7 @@ public class CordeFeatures extends BaseClass {
 			System.out.println(FeatureTitle1);
 			Assert.assertEquals(FeatureTitle1,FileReaderManager.getInstance().getCRInstance().getData("FeatureTitle"));
 			
-			Reporter.addStepLog("Feature Link is click");	
+			Reporter.addStepLog("Feature Link is clicked");	
 			
 		}
 		

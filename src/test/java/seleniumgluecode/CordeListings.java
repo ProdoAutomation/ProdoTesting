@@ -41,10 +41,6 @@ public class CordeListings extends BaseClass {
 		}
 	}
 
-	@Given("^Launch the Application to test Listing module$")
-	public void launch_the_Application_to_test_Listing_module() throws Throwable {
-		driver.get(FileReaderManager.getInstance().getCRInstance().getData("CordeURL"));
-	}
 
 	@Then("^Click on Menu Nav to go to the Listing page$")
 	public void click_on_Menu_Nav_to_go_to_the_Listing_page() throws Throwable {
@@ -226,12 +222,18 @@ public class CordeListings extends BaseClass {
 	public void check_Listing_pagination_working_fine() throws Throwable {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0,-500)");
-		Thread.sleep(1000);
+		Thread.sleep(500);
 		WebElement Previous = pag.getCordeListings().getPreviouspage();
-		if(Previous.isEnabled()){
+		boolean check = Previous.getAttribute("class").contains("disabled");
+		if(check==true){
 		  ClickElement(pag.getCordeListings().getNextpage());
+		  Thread.sleep(500);
+		  boolean check1 = Previous.getAttribute("class").contains("disabled");
+		  System.out.println(check1);
 		  Actions actions = new Actions(driver); actions.moveToElement(Previous).click().build().perform();
-		  if(Previous.isEnabled()) {
+		 
+		  if(check1==false) {
+			  ClickElement(Previous);
 			  Reporter.addStepLog("Paginations are working fine");
 		  				}
 				}

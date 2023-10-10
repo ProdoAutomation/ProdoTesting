@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.util.List;
 import java.util.NoSuchElementException;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -41,10 +40,6 @@ public class CordeGridIcon extends BaseClass{
 		}
 	}
 	
-	@Given("^Launch the Application to test Grid module$")
-	public void launch_the_Application_to_test_Grid_module() throws Throwable {
-		driver.get(FileReaderManager.getInstance().getCRInstance().getData("CordeURL"));
-	}
 
 	@Then("^Click on Menu Nav to go to the Grid page$")
 	public void click_on_Menu_Nav_to_go_to_the_Grid_page() throws Throwable {
@@ -71,6 +66,7 @@ public class CordeGridIcon extends BaseClass{
     
     	//Logic to click Content module grid in the page
     	List<WebElement> Gridtext = pag.getCordeAcc().getGridlinks();
+    	getScroll(driver);
     	for(WebElement Grid:Gridtext) {
     		System.out.println(Grid.getText());
     		String Grid1 = "Fail";
@@ -97,6 +93,7 @@ public class CordeGridIcon extends BaseClass{
     	//Logic to click Grid Icon
     	getScroll700(driver);
     	List<WebElement> Secondtext = pag.getCordeAcc().getGridlinks();
+    	getScroll(driver);
     	if(Secondtext.size()>0) {
     	for(WebElement Second:Secondtext) {
     		System.out.println(Second.getText());
@@ -182,7 +179,7 @@ public class CordeGridIcon extends BaseClass{
 				
 			}
 			else {
-				System.out.println("Non Clickable");
+				throw new NoSuchElementException();
 			}
 		}
 	}
@@ -196,6 +193,9 @@ public class CordeGridIcon extends BaseClass{
 			}else if(img.getAttribute("alt").equalsIgnoreCase(FileReaderManager.getInstance().getCRInstance().getData("GridImage2"))) {
 				Reporter.addStepLog("Grid Image2 is displayed");
 			}
+			else {
+				throw new NoSuchElementException();
+			}
 		}
 		List<WebElement> IconsPrimary = pag.getCordeGridIcon().getIconPrimaryGrid();
 		for(WebElement IconPrimary:IconsPrimary) {
@@ -205,6 +205,9 @@ public class CordeGridIcon extends BaseClass{
 				Reporter.addStepLog("Grid AppleIcon is displayed");
 			}else if(IconPrimary.getAttribute("class").equalsIgnoreCase(FileReaderManager.getInstance().getCRInstance().getData("RobotIcon"))) {
 				Reporter.addStepLog("Grid RobotIcon is displayed");
+			}
+			else {
+				throw new NoSuchElementException();
 			}
 		}
 		if(pag.getCordeGridIcon().getImageGrid().isDisplayed()) {
@@ -216,6 +219,9 @@ public class CordeGridIcon extends BaseClass{
 					Reporter.addStepLog("Grid Sec AlgoliaIcon is displayed");
 				}else if(IconSec.getAttribute("class").equalsIgnoreCase(FileReaderManager.getInstance().getCRInstance().getData("ArtstationIcon"))) {
 					Reporter.addStepLog("Grid ArtstationIcon is displayed");
+				}
+				else {
+					throw new NoSuchElementException();
 				}
 			}
 		}
